@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace FilmesAPI.Models
+namespace MoviesAPI.Models
 {
     public class Movie
     {
+        [Key]
+        [Required]
+        public int Id { get; set; }
         [Required]
         public string Title { get; set; }
         [Required, MaxLength(50)]

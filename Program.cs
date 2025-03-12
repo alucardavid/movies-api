@@ -1,6 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using MoviesAPI.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var dbPath = System.IO.Path.Join(Environment.CurrentDirectory, "movie.db");
+builder.Services.AddDbContext<MovieContext>(opts => opts.UseSqlite($"Data Source={dbPath}"));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
