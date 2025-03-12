@@ -1,11 +1,9 @@
-﻿using MoviesAPI.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MoviesAPI.Data;
 using MoviesAPI.Data.Dtos;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
-using Microsoft.Extensions.FileProviders;
-
+using MoviesAPI.Models;
 namespace MoviesAPI.Controllers;
 
 /// <summary>
@@ -37,7 +35,7 @@ public class MovieController : ControllerBase
     /// <response code="201">If the movie was created successfully.</response>
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public IActionResult AddMovie([FromBody] CreateMovieDto movieDto)
+    public IActionResult CreateMovie([FromBody] CreateMovieDto movieDto)
     {
         Movie movie = _mapper.Map<Movie>(movieDto);
         _context.Movies.Add(movie);
