@@ -40,4 +40,15 @@ public class MovieController : ControllerBase
         if (movie is null) return NotFound();
         return Ok(movie);
     }
+
+    [HttpPut("{id}")]
+    public IActionResult UpdateMovie(int id, [FromBody] UpdateMovieDto movieDto)
+    {
+        var movie = _context.Movies.Find(id);
+        if (movie is null) return NotFound();
+        _mapper.Map(movieDto, movie);
+        _context.SaveChanges();
+
+        return NoContent();
+    }
 }
