@@ -1,5 +1,8 @@
 ﻿using MoviesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using MoviesAPI.Data;
+using MoviesAPI.Data.Dtos;
+using AutoMapper;
 
 namespace MoviesAPI.Controllers;
 
@@ -7,26 +10,33 @@ namespace MoviesAPI.Controllers;
 [Route("[controller]")]
 public class MovieController : ControllerBase
 {
-    private static List<Movie> movies = new List<Movie>();
-    private static int id = 0;
+    private MovieContext _context;
+    private IMapper _mapper;
+
+    public MovieController(MovieContext context, IMapper mapper)
+    {
+        _context = context;
+        _mapper = mapper;
+    }
 
     [HttpPost]
-    public IActionResult AddMovie(Movie movie)
+    public IActionResult AddMovie([FromBody] CreateMovieDto movieDto)
     {
-        movie.Id = id++;
-        movies.Add(movie);
+        Movie movie = _mapper.Map<Movie>(movieDto);
+        _context.Movies.Add(movie);
+        _context.SaveChanges();
         return CreatedAtAction(nameof(ReadMovieById), new { Id = movie.Id }, movie);
     }
 
     [HttpGet]
     public IEnumerable<Movie> ReadMovies([FromQuery] int skip = 0, [FromQuery] int take = 50){
-        return movies.Skip(skip).Take(take);
+        return _context.Movies.Skip(skip).Take(take);
     }
 
     [HttpGet("{id}")]
     public IActionResult ReadMovieById(int id)
     {
-        var movie =  movies.FirstOrDefault(m => m.Id == id);
+        var movie =  _context.Movies.FirstOrDefault(m => m.Id == id);
         if (movie is null) return NotFound();
         return Ok(movie);
     }
