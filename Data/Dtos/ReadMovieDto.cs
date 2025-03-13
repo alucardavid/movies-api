@@ -7,6 +7,12 @@ namespace MoviesAPI.Data.Dtos;
 /// </summary>
 public class ReadMovieDto
 {
+
+    /// <summary>
+    /// Gets or sets the title identifier
+    /// </summary>
+    public required int Id { get; set; }
+    
     /// <summary>
     /// Gets or sets the title of the movie.
     /// </summary>

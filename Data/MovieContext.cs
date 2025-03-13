@@ -23,4 +23,9 @@ public class MovieContext : DbContext
     /// Gets or sets to a entitie MoviesTheaters
     /// </summary>
     public DbSet<MovieTheater> MovieTheaters {get; set;}
+
+    /// <summary>
+    /// Gets or sets to a entitie Addresses
+    /// </summary>
+    public DbSet<Address> Addresses { get; set; }
 }

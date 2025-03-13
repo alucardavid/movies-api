@@ -19,5 +19,16 @@ namespace MoviesAPI.Models
         /// </summary>
         [Required]
         public required string Nome { get; set; }
+
+        /// <summary>
+        /// Gets or sets the movie addressId.
+        /// </summary>
+        [Required]
+        public required int AddressId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the movie address.
+        /// </summary>
+        public required virtual Address Address { get; set; }
     }
 }

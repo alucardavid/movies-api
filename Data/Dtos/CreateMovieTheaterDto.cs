@@ -12,5 +12,11 @@ namespace MoviesAPI.Data.Dtos
         /// </summary>
         [Required]
         public required string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the movie theater addressId.
+        /// </summary>
+        [Required]
+        public required int AddressId { get; set; }
     }
 }

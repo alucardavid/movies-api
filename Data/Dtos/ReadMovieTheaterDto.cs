@@ -14,5 +14,10 @@
         /// Gets or sets the movie theater name.
         /// </summary>
         public required string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the movie theater address.
+        /// </summary>
+        public required ReadAddressDto ReadAddressDto { get; set; }
     }
 }
