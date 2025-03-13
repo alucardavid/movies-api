@@ -16,7 +16,10 @@ public class MovieTheaterProfile : Profile
     public MovieTheaterProfile()
     {
         CreateMap<CreateMovieTheaterDto, MovieTheater>();
-        CreateMap<MovieTheater, UpdateMovieTheaterDto>();
-        CreateMap<MovieTheater, ReadMovieTheaterDto>();
+        CreateMap<UpdateMovieTheaterDto, MovieTheater>();
+        CreateMap<MovieTheater, ReadMovieTheaterDto>()
+            .ForMember(m => m.Address, opt => opt.MapFrom(m => m.Address))
+            .ForMember(m => m.Sessions, opt => opt.MapFrom(m => m.Sessions));
+
     }
 }

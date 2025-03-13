@@ -29,6 +29,11 @@ namespace MoviesAPI.Models
         /// <summary>
         /// Gets or sets the movie address.
         /// </summary>
-        public required virtual Address Address { get; set; }
+        public virtual required Address Address { get; set; }
+
+        /// <summary>
+        /// Gets or sets the movie sessions.
+        /// </summary>
+        public virtual required ICollection<Session> Sessions { get; set; }
     }
 }

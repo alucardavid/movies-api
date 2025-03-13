@@ -18,6 +18,11 @@
         /// <summary>
         /// Gets or sets the movie theater address.
         /// </summary>
-        public required ReadAddressDto ReadAddressDto { get; set; }
+        public required ReadAddressDto Address { get; set; }
+
+        /// <summary>
+        /// Gets or sets the movie theater sessions.
+        /// </summary>
+        public required ICollection<ReadSessionDto> Sessions { get; set; }
     }
 }

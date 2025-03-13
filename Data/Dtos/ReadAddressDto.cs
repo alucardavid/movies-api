@@ -10,10 +10,15 @@ public class ReadAddressDto
     /// <summary>
     /// Gets or sets the address identifier.
     /// </summary>
-    public required int Id { get; set; }
+    public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the address streetor avenue.
     /// </summary>
     public required string Street_Avenue { get; set; }
+
+    /// <summary>
+    /// Gets or sets the address street number.
+    /// </summary>
+    public int Number { get; set; }
 }

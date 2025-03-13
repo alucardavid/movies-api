@@ -31,5 +31,10 @@ namespace MoviesAPI.Models
         /// </summary>
         [Required, Range(70, 600)]
         public int Duration { get; set; }
+
+        /// <summary>
+        /// Gets or sets the collection of sessions associated with the movie.
+        /// </summary>
+        public required virtual ICollection<Session> Sessions { get; set; }
     }
 }

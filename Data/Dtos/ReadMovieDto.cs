@@ -32,4 +32,9 @@ public class ReadMovieDto
     /// Gets or sets the time when the query was made.
     /// </summary>
     public DateTime TimeQuery { get; set; } = DateTime.Now;
+
+    /// <summary>
+    /// Gets or sets movie sessions.
+    /// </summary>
+    public required ICollection<ReadSessionDto> Sessions { get; set; }
 }

@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var dbPath = System.IO.Path.Join(Environment.CurrentDirectory, "movie.db");
-builder.Services.AddDbContext<MovieContext>(opts => opts.UseSqlite($"Data Source={dbPath}"));
+builder.Services.AddDbContext<MovieContext>(opts => opts.UseLazyLoadingProxies().UseSqlite($"Data Source={dbPath}"));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

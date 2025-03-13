@@ -48,6 +48,7 @@ namespace MoviesAPI.Controllers
         [HttpGet]
         public IEnumerable<ReadMovieTheaterDto> ReadMovieTheaters()
         {
+            Console.WriteLine(_context.MovieTheaters.ToList()[0].Address);
             return _mapper.Map<List<ReadMovieTheaterDto>>(_context.MovieTheaters.ToList());
         }
 

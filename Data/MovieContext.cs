@@ -20,12 +20,17 @@ public class MovieContext : DbContext
     public DbSet<Movie> Movies {get; set;}
 
     /// <summary>
-    /// Gets or sets to a entitie MoviesTheaters
+    /// Gets or sets to a entitie MoviesTheater
     /// </summary>
     public DbSet<MovieTheater> MovieTheaters {get; set;}
 
     /// <summary>
-    /// Gets or sets to a entitie Addresses
+    /// Gets or sets to a entitie Addresse
     /// </summary>
     public DbSet<Address> Addresses { get; set; }
+
+    /// <summary>
+    /// Gets or sets to a entitie Session
+    /// </summary>
+    public DbSet<Session> Sessions { get; set; }
 }
