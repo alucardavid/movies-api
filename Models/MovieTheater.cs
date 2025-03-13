@@ -18,7 +18,7 @@ namespace MoviesAPI.Models
         /// Gets or sets the movie theater name.
         /// </summary>
         [Required]
-        public required string Nome { get; set; }
+        public required string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the movie addressId.
