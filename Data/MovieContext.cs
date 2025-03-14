@@ -15,6 +15,32 @@ public class MovieContext : DbContext
     public MovieContext(DbContextOptions<MovieContext> opts) : base(opts){}
 
     /// <summary>
+    /// Method to edit creation of entities
+    /// </summary>
+    /// <param name="builder"></param>
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.Entity<Session>()
+            .HasKey(s => new { s.MovieId, s.MovieTheaterId });
+
+        builder.Entity<Session>()
+            .HasOne(s => s.MovieTheater)
+            .WithMany(m => m.Sessions)
+            .HasForeignKey(s => s.MovieTheaterId);
+
+        builder.Entity<Session>()
+            .HasOne(s => s.Movie)
+            .WithMany(m => m.Sessions)
+            .HasForeignKey(s => s.MovieId);
+
+        builder.Entity<Address>()
+            .HasOne(a => a.MovieTheater)
+            .WithOne(m => m.Address)
+            .OnDelete(DeleteBehavior.Restrict);
+
+    }
+
+    /// <summary>
     /// Gets or sets to a entitie Movies
     /// </summary>
     public DbSet<Movie> Movies {get; set;}

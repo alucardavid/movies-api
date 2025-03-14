@@ -8,10 +8,15 @@ namespace MoviesAPI.Data.Dtos
     public class ReadSessionDto
     {
         /// <summary>
-        /// Gets or sets the session identifier.
+        /// Gets or sets the MovieId.
         /// </summary>
-        public int Id { get; set; }
+        public int MovieId { get; set; }
 
-      
+        /// <summary>
+        /// Gets or sets the MovieTheaterId.
+        /// </summary>
+        public int MovieTheaterId { get; set; }
+
+
     }
 }

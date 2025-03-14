@@ -38,7 +38,7 @@ namespace MoviesAPI.Controllers
             Session session = _mapper.Map<Session>(dto);
             _context.Sessions.Add(session);
             _context.SaveChanges();
-            return CreatedAtAction(nameof(ReadSessionById), new { Id = session.Id }, session);
+            return CreatedAtAction(nameof(ReadSessionById), new { movieId = session.Id }, session);
         }
 
         /// <summary>
@@ -52,14 +52,15 @@ namespace MoviesAPI.Controllers
         }
 
         /// <summary>
-        /// Gets a session by its identifier.
+        /// Gets a session by movieId and movieTheaterId.
         /// </summary>
-        /// <param name="id">The session identifier.</param>
+        /// <param name="movieId"></param>
+        /// <param name="movieTheaterId"></param>
         /// <returns>The session with the specified identifier.</returns>
-        [HttpGet("{id}")]
-        public IActionResult ReadSessionById(int id)
+        [HttpGet("{movieId}/{movieTheaterId}")]
+        public IActionResult ReadSessionById(int movieId, int movieTheaterId)
         {
-            Session? session = _context.Sessions.Find(id);
+            Session? session = _context.Sessions.FirstOrDefault(s => s.MovieId == movieId && s.MovieTheaterId == movieTheaterId);
             if (session != null)
             {
                 ReadSessionDto sessaoDto = _mapper.Map<ReadSessionDto>(session);
