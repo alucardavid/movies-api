@@ -1,11 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace MoviesAPI.Data.Dtos;
+namespace MoviesAPI.Data.Dtos.Movie;
 
 /// <summary>
-/// Data Transfer Object for update a movie.
+/// Data Transfer Object for creating a movie.
 /// </summary>
-public class UpdateMovieDto
+public class CreateMovieDto
 {
     /// <summary>
     /// Gets or sets the movie title.
@@ -20,7 +20,7 @@ public class UpdateMovieDto
     public required string Genre { get; set; }
 
     /// <summary>
-    /// Gets or sets the movie duration.
+    /// Gets or sets the movie duration in minutes.
     /// </summary>
     [Required, Range(70, 600)]
     public int Duration { get; set; }

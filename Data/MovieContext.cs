@@ -1,12 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using MoviesAPI.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 namespace MoviesAPI.Data;
 
 /// <summary>
 /// Context to connect to a database
 /// </summary>
-public class MovieContext : DbContext
+public class MovieContext : IdentityDbContext<User>
 {
     /// <summary>
     /// Constructor to set options to a base class
@@ -20,6 +22,8 @@ public class MovieContext : DbContext
     /// <param name="builder"></param>
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        base.OnModelCreating(builder);
+
         builder.Entity<Session>()
             .HasKey(s => new { s.MovieId, s.MovieTheaterId });
 

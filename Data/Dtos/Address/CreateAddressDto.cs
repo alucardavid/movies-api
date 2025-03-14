@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace MoviesAPI.Data.Dtos;
+namespace MoviesAPI.Data.Dtos.Address;
 
 /// <summary>
 /// Data Transfer Object for creating a address.
@@ -20,5 +20,5 @@ public class CreateAddressDto
     [Required]
     public required int Number { get; set; }
 
-    
+
 }

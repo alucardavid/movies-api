@@ -1,6 +1,7 @@
+using MoviesAPI.Data.Dtos.Session;
 using System.ComponentModel.DataAnnotations;
 
-namespace MoviesAPI.Data.Dtos;
+namespace MoviesAPI.Data.Dtos.Movie;
 
 /// <summary>
 /// Data Transfer Object for reading movie details.
@@ -12,7 +13,7 @@ public class ReadMovieDto
     /// Gets or sets the title identifier
     /// </summary>
     public required int Id { get; set; }
-    
+
     /// <summary>
     /// Gets or sets the title of the movie.
     /// </summary>

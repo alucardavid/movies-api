@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MoviesAPI.Data.Dtos
+namespace MoviesAPI.Data.Dtos.MovieTheater
 {
     /// <summary>
     /// Data Transfer Object for creating a movie theater.

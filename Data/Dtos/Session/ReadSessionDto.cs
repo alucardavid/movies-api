@@ -1,6 +1,6 @@
 ﻿using MoviesAPI.Models;
 
-namespace MoviesAPI.Data.Dtos
+namespace MoviesAPI.Data.Dtos.Session
 {
     /// <summary>
     /// Data Transfer Object for reading session.

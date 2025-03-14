@@ -1,4 +1,7 @@
-﻿namespace MoviesAPI.Data.Dtos
+﻿using MoviesAPI.Data.Dtos.Address;
+using MoviesAPI.Data.Dtos.Session;
+
+namespace MoviesAPI.Data.Dtos.MovieTheater
 {
     /// <summary>
     /// Data Transfer Object for reading a movie theater.

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MoviesAPI.Data.Dtos
+namespace MoviesAPI.Data.Dtos.Session
 {
     /// <summary>
     /// Data Transfer Object for creating a session.

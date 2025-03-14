@@ -1,4 +1,4 @@
-﻿namespace MoviesAPI.Data.Dtos
+﻿namespace MoviesAPI.Data.Dtos.MovieTheater
 {
     /// <summary>
     /// Data Transfer Object for update a movie theater.

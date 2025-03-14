@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace MoviesAPI.Data.Dtos;
+namespace MoviesAPI.Data.Dtos.Address;
 
 /// <summary>
 /// Data Transfer Object for reading address.
